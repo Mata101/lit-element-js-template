@@ -1,7 +1,7 @@
 ## Writing Components
 
-[Templates](https://lit-element.polymer-project.org/guide/templates)
-<h2 href="https://lit-element.polymer-project.org/guide/templates">Templates</h2>
+
+<h2 >[Templates](https://lit-element.polymer-project.org/guide/templates)</h2>
 <h3>Define and render a template Example</h3>
 ```
 import { LitElement, html } from 'lit-element';
