@@ -11,7 +11,7 @@
 To get started:
 
 ```bash
-npm init @open-wc
+npm i
 # requires node 10 & npm 6 or higher
 ```
 
@@ -28,3 +28,5 @@ npm init @open-wc
 For most of the tools, the configuration is in the `package.json` to reduce the amount of files in your project.
 
 If you customize the configuration a lot, you can consider moving them to individual files.
+
+## [Developer tools & Resources](https://github.com/Mata101/lit-element-js-template/blob/main/DEVELOPER.md)
