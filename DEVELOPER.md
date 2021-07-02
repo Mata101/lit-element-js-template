@@ -18,7 +18,8 @@ For optimal performance, define scoped styles in a static styles property.
 
 Define styles in a tagged template literal, using the css tag function:
 
-```import { LitElement, css, html } from 'r5ehhjhb  lit-element';
+```
+import { LitElement, css, html } from 'r5ehhjhb  lit-element';
 
 class MyElement extends LitElement {
   static get styles() {
@@ -31,7 +32,8 @@ class MyElement extends LitElement {
       <div>I'm styled!</div> 
     ";
   }
-}```
+}
+```
 
 
 ### Declare [Properties](https://lit-element.polymer-project.org/guide/properties) Example
@@ -119,3 +121,102 @@ class MyElement extends LitElement {
  }
 }
 ```
+
+
+
+## Tools
+
+### [Publish an element](https://lit-element.polymer-project.org/guide/publish)
+
+We recommend publishing JavaScript modules in standard ES2017. If you’re writing your element in standard ES2017, you don’t need to transpile for publication. If you’re using TypeScript, or ES2017+ features such as decorators or class fields, you will need to transpile your element for publication.
+
+Publishing to npm
+To publish your component to npm, [see the instructions on contributing npm packages.](https://docs.npmjs.com/packages-and-modules/contributing-packages-to-the-registry)
+
+Your package.json configuration should have both the main and module fields:
+
+package.json
+```
+{
+  "main": "my-element.js",
+  "module": "my-element.js"
+}
+```
+
+Transpiling with TypeScript
+When compiling your code from TypeScript to JavaScript, we recommend targeting ES2017 with Node.js module resolution.
+
+The following JSON sample is a partial tsconfig.json that uses recommended options for targeting ES2017:
+```
+  "compilerOptions": {
+    "target": "es2017",
+    "module": "es2015",
+    "moduleResolution": "node",
+    "lib": ["es2017", "dom"],
+    "experimentalDecorators": true
+  }
+```
+
+See the [tsconfig.json documentation](https://www.typescriptlang.org/docs/handbook/tsconfig-json.html) for more information.
+
+Transpiling with Babel
+To transpile a LitElement component that uses proposed JavaScript features, use Babel.
+
+Install Babel and the Babel plugins you need. For example:
+
+npm install --save-dev @babel/core
+npm install --save-dev @babel/plugin-proposal-class-properties
+npm install --save-dev @babel/plugin-proposal-decorators
+Configure Babel. For example:
+
+babel.config.js
+```
+const plugins = [
+  '@babel/plugin-proposal-class-properties',
+  ['@babel/plugin-proposal-decorators', { decoratorsBeforeExport: true } ],
+];
+
+module.exports = { plugins };
+```
+
+
+### [Use a component](https://lit-element.polymer-project.org/guide/use)
+
+<b>Use a LitElement component</b>
+This is a general guide to using third-party LitElement components. Refer to a component’s README or other documentation for specific details.
+
+To use a LitElement component in your code:
+
+1. From your project folder, install the component from npm.
+
+```
+npm install some-package-name
+```
+
+2. Import the component.
+
+In a JavaScript module:
+```
+import 'some-package-name';
+```
+In an HTML page:
+```
+<script type="module">
+import './path-to/some-package-name/some-component.js';
+</script>
+```
+Or:
+```
+<script type="module" src="./path-to/some-package-name/some-component.js"></script>
+```
+3. Add the component to your application or component:
+```
+<some-component></some-component>
+```
+
+
+## Resources
+
+1. [Community](https://lit-element.polymer-project.org/guide/community)
+2. [lit-html Guides](https://lit-html.polymer-project.org/guide)
+3. [Tutorial Videos](https://www.youtube.com/playlist?list=PLZPRETGzebVYjLUnUKzo6yffESOFpKTXa)
