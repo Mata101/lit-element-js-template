@@ -220,3 +220,5 @@ Or:
 1. [Community](https://lit-element.polymer-project.org/guide/community)
 2. [lit-html Guides](https://lit-html.polymer-project.org/guide)
 3. [Tutorial Videos](https://www.youtube.com/playlist?list=PLZPRETGzebVYjLUnUKzo6yffESOFpKTXa)
+4. [LitElement Material Components](https://github.com/material-components/material-components-web-components)
+5. [Lit Element Tutorials](https://vaadin.com/learn/tutorials/lit-element/)

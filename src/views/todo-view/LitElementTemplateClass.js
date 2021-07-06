@@ -1,7 +1,7 @@
 import { LitElement, html, css } from 'lit-element';
-import { openWcLogo } from './open-wc-logo.js';
+import { openWcLogo } from '../../open-wc-logo'
 
-export class LitElementTemplateJs extends LitElement {
+export class LitElementTemplateClass extends LitElement {
   static get properties() {
     return {
       title: { type: String },

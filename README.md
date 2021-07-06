@@ -9,10 +9,56 @@
 ## Quickstart
 
 To get started:
-
+# requires node 10 & npm 6 or higher
+# node v14.16.1 LTS (recommended)
 ```bash
 npm i
-# requires node 10 & npm 6 or higher
+
+```
+
+## Start a live-reload dev server
+
+```
+npm run start
+```
+
+## Run Test
+```
+npm run test
+```
+### Example code for testing:
+
+<p style="color: red">[project-name]/test/lit-element-template-js.test.js</p>
+
+```
+import { html, fixture, expect } from '@open-wc/testing';
+
+import '../src/lit-element-template-js.js';
+
+describe('LitElementTemplateJs', () => {
+  let element;
+  beforeEach(async () => {
+    element = await fixture(html`<lit-element-template-js></lit-element-template-js>`);
+  });
+
+  it('renders a h1', () => {
+    const h1 = element.shadowRoot.querySelector('h1');
+    expect(h1).to.exist;
+    expect(h1.textContent).to.equal('My app');
+  });
+
+  it('passes the a11y audit', async () => {
+    await expect(element).shadowDom.to.be.accessible();
+  });
+});
+```
+This is a test for LitElementTemplateJs Element Class [project-name]/src/LitElementTemplateJs.js
+
+## Storybook
+Your project will run in storybook
+```
+Running storybook: npm run storybook
+Building storybook: npm run storybook:build
 ```
 
 ## Scripts
