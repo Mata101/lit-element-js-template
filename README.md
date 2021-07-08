@@ -1,24 +1,12 @@
-<p align="center">
-  <img width="200" src="https://open-wc.org/hero.png"></img>
-</p>
-
-## Open-wc Starter App
-
 [![Built with open-wc recommendations](https://img.shields.io/badge/built%20with-open--wc-blue.svg)](https://github.com/open-wc)
 
 ## Quickstart
-
-To get started:
-# requires node 10 & npm 6 or higher
-# node v14.16.1 LTS (recommended)
-```bash
-npm i
-
-```
-
+# requires node v14.16.1 LTS
 ## Start a live-reload dev server
 
+To get started:
 ```
+npm i
 npm run start
 ```
 
