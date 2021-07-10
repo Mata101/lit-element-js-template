@@ -9,7 +9,7 @@ import '@vaadin/vaadin-checkbox';
 import '@vaadin/vaadin-radio-button/vaadin-radio-button';
 import '@vaadin/vaadin-radio-button/vaadin-radio-group';
 
-import { addTodo, updateTodoStatus, updateFilter } from '../../redux/actions'
+import { addTodo, updateTodoStatus, updateFilter, clearCompleted } from '../../redux/actions'
 import { VisibilityFilters, getVisibleTodosSelector } from '../../redux/reducer';
 
 // make todo-view aware of the store and listen to updates to the state.
