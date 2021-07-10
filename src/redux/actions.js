@@ -1,16 +1,20 @@
-// import { nanoid } from 'nanoid';
+// Updating the state based on the action
+import { nanoid } from 'nanoid';
 
-
+// Define constants for the action types to avoid typos when we handle these in the reducer.
 export const ADD_TODO = 'ADD_TODO';
 export const UPDATE_TODO_STATUS = 'UPDATE_TODO_STATUS';
 export const UPDATE_FILTER = 'UPDATE_FILTER';
 export const CLEAR_COMPLETED = 'CLEAR_COMPLETED';
 
+
+// Action creators are functions that create the action object. 
+// They can be used to instantiate objects and to ensure that everyone dispatches the action in the same way.
 export const addTodo = task => {
   return {
     type: ADD_TODO,
     todo: { 
-      // id: nanoid(),
+      id: nanoid(),
       task,
       complete: false
     }
@@ -37,35 +41,3 @@ export const clearCompleted = () => {
     type: CLEAR_COMPLETED
   };
 };
-
-
-export const reducer = (state = INITIAL_STATE, action) => {
-    switch (action.type) {
-      case ADD_TODO:
-        return {
-          ...state,
-          todos: [...state.todos, action.todo]
-        };
-      case UPDATE_TODO_STATUS:
-        return {
-          ...state,
-          todos: state.todos.map(todo =>
-            todo.id === action.todo.id 
-              ? { ...action.todo, complete: action.complete }
-              : todo
-          )
-        };
-      case UPDATE_FILTER:
-        return {
-          ...state,
-          filter: action.filter
-        };
-      case CLEAR_COMPLETED:
-        return {
-          ...state,
-          todos: state.todos.filter(todo => !todo.complete)
-        };
-      default:
-        return state;
-    }
-  };
