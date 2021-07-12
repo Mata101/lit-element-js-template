@@ -1,37 +1,31 @@
 <!doctype html>
 <html lang="en">
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <meta name="Description" content="Put your description here.">
-  <base href="/">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="Description" content="Put your description here.">
+    <base href="/">
 
-  <style>
-    html,
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: sans-serif;
-      background-color: #ededed;
-    }
-  </style>
-  <title>lit-element-template-js</title>
-</head>
-
-<body>
-  <lit-element-template-js></lit-element-template-js>
-  <todo-view></todo-view>
-  <script type="module" src="./src/views/todo-view/todo-view-elements.js"></script>
-  <script>
-    // HACK(keanulee): The Redux package assumes `process` exists - mock it here before
-    // the module is loaded.
-    window.process = {
-      env: {
-        NODE_ENV: 'production'
+    <style>
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+        background-color: #ededed;
       }
-    };
-  </script>
-</body>
+    </style>
+    <title>lit-element-template-js</title>
+  </head>
 
+  <body>
+    <nav>
+      <a href="/">Todos</a>
+      <a href="/stats-view">Stats</a>
+    </nav>
+    <main></main>
+    <script type="module" src='./index.js'></script>
+  </body>
+  
 </html>

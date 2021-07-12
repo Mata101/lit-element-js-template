@@ -1,5 +1,5 @@
 import { LitElement, html, css } from 'lit-element';
-import { openWcLogo } from '../../open-wc-logo'
+import { openWcLogo } from '../open-wc-logo'
 
 export class LitElementTemplateClass extends LitElement {
   static get properties() {
@@ -87,3 +87,4 @@ export class LitElementTemplateClass extends LitElement {
     `;
   }
 }
+customElements.define('lit-element-template-class',LitElementTemplateClass);

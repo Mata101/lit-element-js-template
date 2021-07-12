@@ -1,7 +1,8 @@
-import { LitElement, html } from 'lit-element'; 
+import {html} from 'lit-element'; 
 import { connect } from 'pwa-helpers';
-import { store } from '../../redux/store';
-
+import { store } from '../redux/store';
+import { BaseView } from './base-view-class';
+import { LitElementTemplateClass } from './lit-element-template';
 // UI components from the open source Vaadin component set
 import '@vaadin/vaadin-text-field';
 import '@vaadin/vaadin-button';
@@ -9,11 +10,11 @@ import '@vaadin/vaadin-checkbox';
 import '@vaadin/vaadin-radio-button/vaadin-radio-button';
 import '@vaadin/vaadin-radio-button/vaadin-radio-group';
 
-import { addTodo, updateTodoStatus, updateFilter, clearCompleted } from '../../redux/actions'
-import { VisibilityFilters, getVisibleTodosSelector } from '../../redux/reducer';
+import { addTodo, updateTodoStatus, updateFilter, clearCompleted } from '../redux/actions'
+import { VisibilityFilters, getVisibleTodosSelector } from '../redux/reducer';
 
 // make todo-view aware of the store and listen to updates to the state.
-export class TodoView extends connect(store)(LitElement) { 
+export class TodoView extends connect(store)(BaseView) { 
 
   // Add a stateChanged method and update the component properties based on it.
   // every time the app state changes, stateChanged gets called on the component and we can update the properties on our component.
@@ -115,6 +116,7 @@ export class TodoView extends connect(store)(LitElement) {
       @click="${this.clearCompleted}"> 
         Clear completed
     </vaadin-button>
+    <lit-element-template-class></lit-element-template-class>
     `;
   }
 
@@ -163,9 +165,7 @@ export class TodoView extends connect(store)(LitElement) {
         return todos;
     }
   }
-  // tell LitElement to render directly into the light DOM
-  // you should see the CSS styles applied.
-  createRenderRoot() {
-    return this;
-  }
+  
 }
+
+customElements.define('todo-view',TodoView);

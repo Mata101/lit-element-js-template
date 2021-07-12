@@ -33,6 +33,7 @@
   "author": "lit-element-template-js",
   "license": "MIT",
   "dependencies": {
+    "@vaadin/router": "^1.7.4",
     "@vaadin/vaadin-button": "^20.0.0",
     "@vaadin/vaadin-checkbox": "^20.0.0",
     "@vaadin/vaadin-radio-button": "^20.0.0",
