@@ -1,13 +1,10 @@
 // Updating the state based on the action
-import { nanoid } from 'nanoid';
-
 // Define constants for the action types to avoid typos when we handle these in the reducer.
 export const ADD_TODO = 'ADD_TODO';
 export const UPDATE_TODO_STATUS = 'UPDATE_TODO_STATUS';
 export const UPDATE_FILTER = 'UPDATE_FILTER';
 export const CLEAR_COMPLETED = 'CLEAR_COMPLETED';
-
-
+import { nanoid } from 'nanoid';
 // Action creators are functions that create the action object. 
 // They can be used to instantiate objects and to ensure that everyone dispatches the action in the same way.
 export const addTodo = task => {

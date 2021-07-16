@@ -1,10 +1,9 @@
 // import { hmrPlugin, presets } from '@open-wc/dev-server-hmr';
-
 /** Use Hot Module replacement by adding --hmr to the start command */
 const hmr = process.argv.includes('--hmr');
 
 export default /** @type {import('@web/dev-server').DevServerConfig} */ ({
-  nodeResolve: { browser: true },
+  nodeResolve: { browser: true, crypto: true },
   open: '/',
   watch: !hmr,
 
@@ -12,8 +11,7 @@ export default /** @type {import('@web/dev-server').DevServerConfig} */ ({
   // esbuildTarget: 'auto'
 
   /** Set appIndex to enable SPA routing */
-  // appIndex: 'demo/index.html',
-
+  appIndex: './index.html',
   /** Confgure bare import resolve plugin */
   // nodeResolve: {
   //   exportConditions: ['browser', 'development']
@@ -22,6 +20,7 @@ export default /** @type {import('@web/dev-server').DevServerConfig} */ ({
   plugins: [
     /** Use Hot Module Replacement by uncommenting. Requires @open-wc/dev-server-hmr plugin */
     // hmr && hmrPlugin({ exclude: ['**/*/node_modules/**/*'], presets: [presets.litElement] }),
+    
   ],
 
   // See documentation for all available options
