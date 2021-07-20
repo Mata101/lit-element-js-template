@@ -1,11 +1,11 @@
 import { html, fixture, expect } from '@open-wc/testing';
 
-import '../src/lit-element-template-js.js';
+import '../src/views/lit-element-template';
 
 describe('LitElementTemplateJs', () => {
   let element;
   beforeEach(async () => {
-    element = await fixture(html`<lit-element-template-js></lit-element-template-js>`);
+    element = await fixture(html`<lit-element-template-class></lit-element-template-class>`);
   });
 
   it('renders a h1', () => {
