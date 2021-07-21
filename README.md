@@ -4,6 +4,12 @@
 # requires node v14.16.1 LTS
 ## Start a live-reload dev server
 
+### Additional Features:
+- redux@4.1.0 for state management
+- @vaadin/router for Navigation and code splitting
+- Offline Capable Progressive Web App
+
+
 To get started:
 ```
 npm i
@@ -11,6 +17,9 @@ npm run start
 ```
 
 ## Run Test
+Test Runner includes:
+[Modern Web](https://modern-web.dev/guides/test-runner/browsers/#testing-in-all-evergreen-browsers)
+[Testing for Mobile](https://modern-web.dev/guides/test-runner/responsive/)
 ```
 npm run test
 ```
