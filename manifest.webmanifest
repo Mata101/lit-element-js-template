@@ -1,0 +1,19 @@
+{
+    "name": "Todo App",
+    "short_name": "Todo",
+    "start_url": ".",
+    "display": "standalone",
+    "background_color": "#2A3443",
+    "description": "LitElement tutorial",
+    "theme_color": "#2A3443",
+    "icons": [
+      {
+        "src": "./img/icons/2500304.png",
+        "sizes": "437x438",
+        "type": "image/png"
+      }
+      
+      
+    ],
+    "offline_enabled": true
+  }

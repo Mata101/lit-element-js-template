@@ -3,6 +3,7 @@ import merge from 'deepmerge';
 import { createSpaConfig } from '@open-wc/building-rollup';
 // use createBasicConfig to do regular JS to JS bundling
 // import { createBasicConfig } from '@open-wc/building-rollup';
+import copy from 'rollup-plugin-cpy';
 
 const baseConfig = createSpaConfig({
   // use the outputdir option to modify where files are output
@@ -14,9 +15,8 @@ const baseConfig = createSpaConfig({
 
   // development mode creates a non-minified build for debugging or development
   developmentMode: process.env.ROLLUP_WATCH === 'true',
-
   // set to true to inject the service worker registration into your index.html
-  injectServiceWorker: false,
+  injectServiceWorker: true,
   
 });
 
@@ -24,7 +24,18 @@ export default merge(baseConfig, {
   // if you use createSpaConfig, you can use your index.html as entrypoint,
   // any <script type="module"> inside will be bundled by rollup
   input: './index.html',
-  external: ['crypto'],
+  plugins: [
+    
+    copy({
+      // copy manifest.webmanifest
+      files: ['manifest.webmanifest'],
+      dest: 'dist',
+      options: {
+        // parents makes sure to preserve the original folder structure
+        parents: true,
+      },
+    })
+  ]
   // alternatively, you can use your JS as entrypoint for rollup and
   // optionally set a HTML template manually
   // input: './app.js',

@@ -57,7 +57,8 @@ class App extends LitElement {
 
     if ('serviceWorker' in navigator) { 
       try {
-        navigator.serviceWorker.register('./src/sw.js'); 
+        navigator.serviceWorker.register('./sw.js'); 
+          
       } catch (e) {
         console.log('ServiceWorker registration failed. Sorry about that.', e);
       }

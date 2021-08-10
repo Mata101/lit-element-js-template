@@ -1,4 +1,5 @@
 [![Built with open-wc recommendations](https://img.shields.io/badge/built%20with-open--wc-blue.svg)](https://github.com/open-wc)
+Following guides, tools, and libraries for [modern web}(https://modern-web.dev/) development.
 
 ## Quickstart
 # requires node v14.16.1 LTS
@@ -17,9 +18,7 @@ npm run start
 ```
 
 ## Run Test
-Test Runner includes:
-[Modern Web](https://modern-web.dev/guides/test-runner/browsers/#testing-in-all-evergreen-browsers)
-[Testing for Mobile](https://modern-web.dev/guides/test-runner/responsive/)
+
 ```
 npm run test
 ```
